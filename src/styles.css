@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+/*@import 'animate.css/animate.css';*/
+body {
+    background-color: rgb(124, 119, 119);
+    color: lightblue;
+  }

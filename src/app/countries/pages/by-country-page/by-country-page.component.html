@@ -1,0 +1,28 @@
+<h2>Buscar paises segun su nombre</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <!-- search box  on Value2 es el evento incluido en mi search box que yo he creado que está en shared-->
+        <!-- obtengo el valor del $event en el metodo que yo haga dentro de mi clase ligada a este html-->
+        <!--al usar manejaEviarPais se rellena nuestro array LsitaPaises que se envia como parametro a countries table-->
+        <shared-search-box 
+            (onValue2)="manejaEnviarPais($event)"
+            placeholder = "Introduce un texto para buscar por pais" 
+            #txtsearchbox>
+        </shared-search-box>
+        <hr>
+    </div>
+    <div class="row">
+        <div class="col">
+            <!--a mi tabla le mando el listado de paises como parametro-->
+            <countries-table 
+                [listaPaises] = "ListaPaises">
+            </countries-table>
+            
+        </div>
+
+    </div>
+</div>
+
+

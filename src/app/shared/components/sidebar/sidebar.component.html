@@ -1,0 +1,36 @@
+<h2>Países</h2>
+<hr>
+<!--Para tener acceso al router hay que importar el modulo router en nuestro modulo shared-->
+<ul class = "list-group">
+    <!--  estas opciones se comentan por que se hicieron con fines didacticos
+    <li 
+    routerLink = "home" 
+    class="list-group-item"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }">
+        Home Page
+    </li>
+
+    <li class="list-group-item" routerLink = "about"   routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        About Page
+    </li>
+    <li class="list-group-item" routerLink = "contact" routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >
+        Contact Page
+    </li>
+    -->
+    <li class="list-group-item" routerLink = "countries/by-country"  routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Por País
+    </li>
+    <li class="list-group-item" routerLink = "countries/by-capital"  routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Por Capital
+    </li>
+    <li class="list-group-item" routerLink = "countries/by-region"  routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Por Región
+    </li>
+    <li class="list-group-item" routerLink = "countries/by/esp"  routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        ir a España
+    </li>    
+
+</ul>

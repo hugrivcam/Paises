@@ -1,0 +1,44 @@
+<ng-template #loading>
+    <div class="alert alert-info text-center" >
+        Espere por favor
+    </div>
+</ng-template> 
+
+<div *ngIf="miPais;else loading">
+    <div class="row">
+        <div class="col">
+            <h2>País: <strong>{{miPais.name.common}}</strong></h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <h3>Bandera</h3>
+            <img [src]="miPais.flags.svg" [alt]="miPais.name.common" class = "img-thumbnail">
+        </div>
+        <div class="col">
+            <h3>Info</h3>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Capital: </strong> {{miPais.capital}} </li>
+                <li class="list-group-item "><strong>Población: </strong>{{miPais.population | number}} </li>
+                <li class="list-group-item"><strong>Moneda: </strong> {{miPais.currencies.EUR?.name}} </li>
+                <li class="list-group-item"><strong>Codigo: </strong> {{miPais.cca3}} </li>
+                <li class="list-group-item"><strong>Mapa: </strong><a [href]="miPais.maps.googleMaps">Link Mapa</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">    
+        <div class="col">
+            <h3>Traducciones</h3>
+            <div class="d-flex flex-wrap">               
+                <span class="badge bg-primary mt-1 mx-1">{{miPais.translations['bre'].common}}</span>
+                <span class="badge bg-primary mt-1 mx-1">{{miPais.translations['ara'].common}}</span>
+                <span class="badge bg-primary mt-1 mx-1">{{miPais.translations['ces'].common}}</span>
+                <span class="badge bg-primary mt-1 mx-1">{{miPais.translations['cym'].common}}</span>
+                <span class="badge bg-primary mt-1 mx-1">{{miPais.translations['spa'].common}}</span>
+                <span class="badge bg-primary mt-1 mx-1">{{miPais.translations['ita'].common}}</span>
+                <span class="badge bg-primary mt-1 mx-1">{{miPais.translations['fra'].common}}</span>
+            </div>
+        </div>
+    </div>
+</div>
