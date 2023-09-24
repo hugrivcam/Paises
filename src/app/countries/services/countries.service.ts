@@ -27,7 +27,7 @@ export class CountriesService {
   }
   private loadFromLocalStorage()
   {
-    const res = localStorage.getItem('cacheStore')
+    const res = localStorage.getItem('cacheStore');
     if (res)
     {
       this.cacheStore = JSON.parse(res);
