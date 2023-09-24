@@ -2,7 +2,7 @@
 import { Routes, RouterModule } from '@angular/router';
 //import { AppRoutingModule } from './app-routing/app-routing.module';
 import { NgModule } from '@angular/core';
-import { HomePageComponent } from './shared/pages/home-page/home-page.component';
+//import { HomePageComponent } from './shared/pages/home-page/home-page.component';
 import { AboutPageComponent } from './shared/pages/about-page/about-page.component';
 import { ContactPageComponent } from './shared/pages/contact-page/contact-page.component';
 //las rutas about, home y contact

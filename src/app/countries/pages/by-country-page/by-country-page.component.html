@@ -1,4 +1,4 @@
-<h2>Buscar paises segun su nombre</h2>
+<h2>Buscar paises</h2>
 <hr>
 
 <div class="row">
@@ -9,17 +9,21 @@
         <shared-search-box 
             (onValue2)="manejaEnviarPais($event)"
             placeholder = "Introduce un texto para buscar por pais" 
+            [termBusqueda] ="miTermBusqueda"
             #txtsearchbox>
         </shared-search-box>
         <hr>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col-9">
             <!--a mi tabla le mando el listado de paises como parametro-->
-            <countries-table 
-                [listaPaises] = "ListaPaises">
-            </countries-table>
+            <countries-table [listaPaises] = "ListaPaises"></countries-table>            
+        </div>
+        <!-- <div class="col">                  
             
+        </div>     -->
+        <div class="col">                  
+            <shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>
         </div>
 
     </div>

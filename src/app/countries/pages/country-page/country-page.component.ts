@@ -1,3 +1,6 @@
+import { OnDestroy } from '@angular/core';
+//esta es la pagina /by/:id, que recibe el parametro para abrir los datos del pais
+
 import { CountriesService } from './../../services/countries.service';
 import { HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
@@ -16,7 +19,7 @@ import { Country } from '../../interfaces/country';
 //se usa un pipe dentro de route.params para observar esa ruta y cuando se ejecuta el subscribe
 //de la ruta automaticamente con swich map lanazamos el parmatro leido en params
 //
-export class CountryPageComponent implements OnInit
+export class CountryPageComponent implements OnInit, OnDestroy
  {
 
     public miPais?: Country; //? pues puede ser nulo
@@ -25,7 +28,12 @@ export class CountryPageComponent implements OnInit
       private router:Router, //
       private cs:CountriesService
     ){}
+
+    ngOnDestroy(): void {
+      
+    }
     ngOnInit(): void {
+      
       this.route.params
       .pipe(
         //switchMap recibe el parametro anterior params y en vez de lanzar otro subscribe lanzo uno solo

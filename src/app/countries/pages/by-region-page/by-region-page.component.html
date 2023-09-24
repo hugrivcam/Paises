@@ -1,25 +1,31 @@
-<h2>Buscar paises segun su región</h2>
-<hr>
-
+<h2>Buscar paises</h2>
 <div class="row">
-    <div class="col">
+    <hr>
+    <div class="col-lg-6 text-center bg-black bg-opacity-25 rounded-2" >
         <!-- search box  on Value2 es el evento incluido en mi search box que yo he creado que está en shared-->
         <!-- obtengo el valor del $event en el metodo que yo haga dentro de mi clase ligada a este html-->
-        <shared-search-box 
+        <!-- <shared-search-box 
             (onValue2)="manejaEnviarRegion($event)"
             placeholder = "Introduce un texto, Europa, Africa..." 
             #txtsearchbox>
-        </shared-search-box>
-        <hr>
+        </shared-search-box> -->
+        <!-- ngClass clase condicional controlada por angula -->
+        <button *ngFor="let region of regionesValidas" 
+            class="btn btn-outline-light mt-1 mx-1" 
+            [ngClass]="{'btn-outline-light': selectedRegion === region}" 
+            (click) = "manejaEnviarRegion(region)">{{region}}
+        </button>
     </div>
+    <hr class="mt-2">
     <div class="row">
         <div class="col">
             <!--a mi tabla le mando el listado de paises como parametro-->
-            <countries-table 
-                [listaPaises] = "ListaPaises">
-            </countries-table>
-            
+            <countries-table  [listaPaises] = "ListaPaises"> </countries-table>   
         </div>
+        <div class="col">                  
+            <shared-loading-spinner *ngIf="isLoading===true"></shared-loading-spinner>
+        </div>
+
 
     </div>
 </div>

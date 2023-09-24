@@ -1,7 +1,3 @@
-
 <input type="text" [placeholder] = "placeholder" class="form-control" #txtInput 
-(keyup.enter)="EnviarValor()">
-<!--(keyup.enter)="EnviarValor()">
-podia haber puesto
-(keyup.enter)="EnviarValor(txtInput.value)"
--->
+(keyup.enter)="EnviarValor()" 
+(keyup)="onKeyPress(txtInput.value)">

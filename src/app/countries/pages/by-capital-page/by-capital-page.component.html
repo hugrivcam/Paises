@@ -8,16 +8,17 @@
         <shared-search-box 
             (onValue2)="ManejaEnviarCapital($event)"
             placeholder = "Introduce un texto para buscar por capital" 
+            [termBusqueda]="miTermBusqueda"
             #txtsearchbox>
         </shared-search-box>
         <hr>
     </div>
     <div class="row">
-        <div class="col">
-            <countries-table 
-                [listaPaises] = "ListaPaises">
-            </countries-table>
-            
+        <div class="col-11">
+            <countries-table [listaPaises] = "ListaPaises">  </countries-table>
+        </div>
+        <div class="col">                  
+            <shared-loading-spinner *ngIf="isLoading===true"></shared-loading-spinner>
         </div>
 
     </div>
